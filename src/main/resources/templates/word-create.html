@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create word</title>
+</head>
+<body>
+<form action = "#" th:action="@{word-create}" th:object="${word}" method ="post">
+    <label for="wordValue">Word</label>
+    <input type="text" th:field="*{wordvalue}" id="wordValue" placeholder="Word Value">
+    <label for="definitionValue">Definition</label>
+    <input type="text" th:field="*{definition}" id="definitionValue" placeholder="Definition Value">
+    <input type="submit" value="Create Word">
+</form>
+</body>
+</html>

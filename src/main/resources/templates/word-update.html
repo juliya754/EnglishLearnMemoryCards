@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Create user</title>
+</head>
+<body>
+<form action="#" th:action="@{/word-update}" th:object="${word}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="wordvalue">Word Value</label>
+    <input type="text" th:field="*{wordvalue}" id="wordvalue" placeholder="Word Value">
+    <br/>
+    <label for="definition">Definition</label>
+    <input type="text" th:field="*{definition}" id="definition" placeholder="Definition">
+    <br/>
+    <input type="submit" value="Update word">
+</form>
+</body>
+</html>>
