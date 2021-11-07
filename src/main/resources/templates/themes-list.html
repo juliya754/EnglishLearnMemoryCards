@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <title>description</title>
+    <style>
+    .button {
+    width: 200px;
+    padding: 10px;
+   }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <div>Select Test Order</div>
+    <form role="form" id="selectTheme" th:action=@{/selectTheme} method="post">
+        <select class="form-control" id="testOrder" name="selectedTheme">
+            <option th:each="theme : ${themes}"
+                    th:value="${theme.id}"
+                    th:text="${theme.description}"></option>
+        </select>
+        <button type="submit">Choose</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

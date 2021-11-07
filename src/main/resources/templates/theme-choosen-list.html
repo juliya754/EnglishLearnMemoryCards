@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <title>description</title>
+    <style>
+    .button {
+    width: 200px;
+    padding: 10px;
+   }
+    </style>
+    <script language="JavaScript" th:inline="javascript">
+    function findWithAttr(array, attr, value) {
+        for(var i = 0; i < array.length; i += 1) {
+            if(array[i][attr] === value) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    document.addEventListener('DOMContentLoaded', function(e){
+        $(function() {
+            $('input').click(function() {
+                var message = [[${themes.words}]];
+                var ValueOfButton = $(this).attr('value')
+                var IdValue = findWithAttr(message, 'wordvalue', ValueOfButton)
+                // show word or defenition after click depends on current text in button
+                if (IdValue < 0){
+                    IdValue = findWithAttr(message, 'definition', ValueOfButton)
+                    $(this).val(message[IdValue].wordvalue);
+                }
+                else {
+                    $(this).val(message[IdValue].definition);
+                }
+            });
+        });
+	});
+    </script>
+</head>
+<body>
+
+<div  th:each="word : ${themes.words}">
+    <div><input type='button' height="150px" width="100px" style="display:block" class="button" th:value="${word.wordvalue}"></input></div>
+</div>
+
+<p><a href="/themes">Theme list</a></p>
+
+</body>
+</html>
