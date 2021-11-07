@@ -1,8 +1,6 @@
 package com.MemoryCards.MemoryCards.controller;
 
-import com.MemoryCards.MemoryCards.model.User;
 import com.MemoryCards.MemoryCards.model.Word;
-import com.MemoryCards.MemoryCards.service.UserService;
 import com.MemoryCards.MemoryCards.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
