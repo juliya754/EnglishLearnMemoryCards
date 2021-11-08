@@ -40,10 +40,15 @@
     </script>
 </head>
 <body>
-
-<div  th:each="word : ${themes.words}">
-    <div><input type='button' height="150px" width="100px" style="display:block" class="button" th:value="${word.wordvalue}"></input></div>
-</div>
+<table>
+    <tbody>
+        <tr  th:each="word : ${themes.words}">
+            <td><input type='button' height="150px" width="100px" style="display:block" class="button" th:value="${word.wordvalue}"></input></td>
+            <td><a th:href="@{word-update/{id}(id=${word.id})}">Edit</a></td>
+            <td><a th:href="@{word-delete/{id}(id=${word.id})}">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
 
 <p><a href="/themes">Theme list</a></p>
 

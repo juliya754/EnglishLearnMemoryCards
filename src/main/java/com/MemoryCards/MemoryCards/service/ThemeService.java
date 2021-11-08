@@ -12,14 +12,19 @@ public class ThemeService {
     private final ThemeRepository themeRepository;
 
     @Autowired
-    public ThemeService(ThemeRepository themeRepository){
+    public ThemeService(ThemeRepository themeRepository) {
         this.themeRepository = themeRepository;
     }
 
     public List<Theme> findAll() {
         return themeRepository.findAll();
     }
-    public Theme findById(Long id){
+
+    public Theme findById(Long id) {
         return themeRepository.findById(id).get();
+    }
+
+    public void deleteById(Long id) {
+        themeRepository.deleteById(id);
     }
 }

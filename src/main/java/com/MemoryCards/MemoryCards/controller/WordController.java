@@ -41,7 +41,7 @@ public class WordController {
     @GetMapping("word-delete/{id}")
     public String deleteWord(@PathVariable("id") Long id){
         wordService.deleteById(id);
-        return "redirect:/words";
+        return "redirect:/themes";
     }
 
     @GetMapping("word-update/{id}")
@@ -55,4 +55,5 @@ public class WordController {
         wordService.saveWord(word);
         return "redirect:/words";
     }
+
 }
